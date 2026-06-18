@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Corpas · Descuento 4 Programas — Mayo vs Junio 2026</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Poppins',sans-serif;background:#F5F5F5;color:#1A1A1A;padding:28px 32px 56px;min-height:100vh}
+
+    /* HEADER */
+    .header-bar{background:#1A1A1A;border-radius:10px;padding:10px 18px;display:flex;align-items:center;gap:14px;margin-bottom:8px}
+    .logo-circle{width:40px;height:40px;border-radius:50%;background:#FFC000;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#1A1A1A;flex-shrink:0}
+    .header-title{font-size:16px;color:#fff;font-weight:400}
+    .header-title strong{font-weight:700;font-style:italic}
+    .slide-subtitle{font-size:10.5px;color:#666;font-weight:300;font-style:italic;margin-bottom:26px;padding-left:4px}
+
+    /* SECTION LABEL */
+    .section-label{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:#999;margin-bottom:10px;margin-top:28px;padding-left:2px}
+
+    /* PROGRAMA SECTION */
+    .programa-block{margin-bottom:36px}
+    .programa-title-bar{background:#1A1A1A;border-radius:8px 8px 0 0;padding:9px 16px;display:flex;align-items:center;justify-content:space-between}
+    .programa-name{font-size:14px;font-weight:700;color:#fff}
+    .programa-badge{background:#FFC000;color:#1A1A1A;font-size:8px;font-weight:700;padding:3px 10px;border-radius:20px}
+
+    /* KPI ROW */
+    .kpi-row{display:grid;grid-template-columns:repeat(2,1fr);gap:0}
+    .period-col{padding:14px 16px 14px;background:#fff;border:0.5px solid #E0E0E0}
+    .period-col.mayo{border-right:2px solid #F5F5F5}
+    .period-col.junio{border-left:none}
+    .period-col-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid #F0F0F0}
+    .period-col-title{font-size:11px;font-weight:700;color:#1A1A1A}
+    .dcto-badge-mayo{background:#888;color:#fff;font-size:8px;font-weight:700;padding:2px 8px;border-radius:12px}
+    .dcto-badge-junio{background:#FFC000;color:#1A1A1A;font-size:8px;font-weight:700;padding:2px 8px;border-radius:12px}
+    .adname-tag{font-size:7.5px;color:#999;font-style:italic;margin-bottom:10px}
+
+    /* MINI KPI GRID */
+    .mini-kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-bottom:10px}
+    .mini-kpi{background:#F9F9F9;border-radius:7px;padding:8px 6px 12px;text-align:center;position:relative;overflow:hidden;border:0.5px solid #EBEBEB}
+    .mini-kpi::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:#FFC000;border-radius:0 0 7px 7px}
+    .mini-kpi.main-kpi{background:#FFF8E1}
+    .mini-val{font-size:16px;font-weight:700;color:#1A1A1A;line-height:1.1}
+    .mini-val.yellow{color:#FFC000}
+    .mini-lbl{font-size:7px;font-weight:700;color:#333;margin-top:4px}
+    .mini-sub{font-size:6.5px;color:#999;font-weight:300;margin-top:2px}
+
+    /* FULL COMPARISON TABLE */
+    .table-wrap{border-radius:0 0 8px 8px;overflow:hidden;border:0.5px solid #E0E0E0;border-top:none}
+    table{width:100%;border-collapse:collapse;font-size:9px}
+    thead tr{background:#1A1A1A}
+    thead th{color:#fff;font-weight:700;padding:7px 12px;text-align:left;font-size:8.5px}
+    thead th.th-mayo{background:#888}
+    thead th.th-junio{background:#FFC000;color:#1A1A1A}
+    thead th.th-var{background:#333}
+    tbody tr:nth-child(even){background:#F9F9F9}
+    tbody tr:nth-child(odd){background:#fff}
+    tbody tr.hl{background:#FFC000 !important}
+    tbody tr.hl td{font-weight:700;color:#1A1A1A}
+    tbody tr.gr{background:#E8E8E8 !important}
+    tbody tr.gr td{color:#333}
+    tbody td{padding:6px 12px;color:#333;border-bottom:0.5px solid #EEE}
+    tbody td:last-child{text-align:right;font-weight:600;color:#1A1A1A}
+    .dp{color:#4CAF50;font-weight:700}
+    .dn{color:#EF5350;font-weight:700}
+    .dn2{color:#EF5350;font-weight:700;font-size:8px}
+    .dp2{color:#4CAF50;font-weight:700;font-size:8px}
+
+    /* RESUMEN GENERAL TABLE */
+    .resumen-card{background:#fff;border-radius:10px;border:0.5px solid #E0E0E0;overflow:hidden;margin-top:36px}
+    .resumen-header{background:#1A1A1A;padding:10px 16px;display:flex;align-items:center;gap:10px}
+    .resumen-header-text{font-size:13px;font-weight:700;color:#fff}
+    .resumen-badge{background:#FFC000;color:#1A1A1A;font-size:8px;font-weight:700;padding:2px 8px;border-radius:12px}
+
+    /* INSIGHT */
+    .insight-bar{background:#fff;border-radius:8px;border:0.5px solid #E0E0E0;display:flex;align-items:flex-start;padding:14px 16px;gap:12px;margin-top:16px}
+    .insight-accent{width:6px;min-height:44px;background:#FFC000;border-radius:3px;flex-shrink:0}
+    .insight-text{font-size:10.5px;color:#666;font-weight:300;line-height:1.7}
+    .insight-text strong{font-weight:700;color:#1A1A1A}
+
+    .footer{margin-top:36px;font-size:8px;color:#CCC;text-align:right;font-weight:300}
+
+    /* HIGHLIGHT ROW for resumen */
+    .best{color:#4CAF50;font-weight:700}
+    .worst{color:#EF5350;font-weight:700}
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header-bar">
+  <div class="logo-circle">A</div>
+  <div class="header-title">Corpas · <strong>Anuncio Descuento por Programa — Mayo 20% vs Junio 15%</strong></div>
+</div>
+<div class="slide-subtitle">
+  Comparativo estático de descuento · Medicina, Enfermería, Música y Lic. Lenguas Ext · Mayo 2026 (31 días) vs Junio 1–18 2026 (18 días activos)
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- MEDICINA -->
+<!-- ══════════════════════════════════════════════════════ -->
+<div class="programa-block">
+  <div class="programa-title-bar">
+    <span class="programa-name">🩺 Medicina</span>
+    <span class="programa-badge">PROGRAMA</span>
+  </div>
+  <div class="kpi-row">
+    <div class="period-col mayo">
+      <div class="period-col-header">
+        <span class="period-col-title">Mayo 2026</span>
+        <span class="dcto-badge-mayo">20% Dcto</span>
+      </div>
+      <div class="adname-tag">estatico_medicina_20dcto_30-04</div>
+      <div class="mini-kpis">
+        <div class="mini-kpi main-kpi"><div class="mini-val yellow">11</div><div class="mini-lbl">Registros</div><div class="mini-sub">Conversiones</div></div>
+        <div class="mini-kpi"><div class="mini-val">12.6K</div><div class="mini-lbl">Alcance</div><div class="mini-sub">Personas únicas</div></div>
+        <div class="mini-kpi"><div class="mini-val">4.78%</div><div class="mini-lbl">CTR Link</div><div class="mini-sub">1,276 clicks</div></div>
+        <div class="mini-kpi"><div class="mini-val">$589K</div><div class="mini-lbl">Inversión</div><div class="mini-sub">COP</div></div>
+      </div>
+    </div>
+    <div class="period-col junio">
+      <div class="period-col-header">
+        <span class="period-col-title">Junio 2026 (hasta hoy)</span>
+        <span class="dcto-badge-junio">15% Dcto · Activo</span>
+      </div>
+      <div class="adname-tag">estatico_medicina_15dcto_01-06</div>
+      <div class="mini-kpis">
+        <div class="mini-kpi main-kpi"><div class="mini-val yellow">42</div><div class="mini-lbl">Registros</div><div class="mini-sub">Conversiones</div></div>
+        <div class="mini-kpi"><div class="mini-val">69.6K</div><div class="mini-lbl">Alcance</div><div class="mini-sub">Personas únicas</div></div>
+        <div class="mini-kpi"><div class="mini-val">4.24%</div><div class="mini-lbl">CTR Link</div><div class="mini-sub">7,232 clicks</div></div>
+        <div class="mini-kpi"><div class="mini-val">$2.4M</div><div class="mini-lbl">Inversión</div><div class="mini-sub">COP</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Métrica</th><th class="th-mayo">Mayo · 20% Dcto</th><th class="th-junio">Junio · 15% Dcto</th><th class="th-var">Variación</th></tr></thead>
+      <tbody>
+        <tr class="hl"><td>Registros (Conversiones)</td><td>11</td><td>42</td><td><span class="dp">+282%</span></td></tr>
+        <tr><td>Alcance</td><td>12,563</td><td>69,571</td><td><span class="dp">+454%</span></td></tr>
+        <tr><td>Impresiones</td><td>26,681</td><td>170,644</td><td><span class="dp">+540%</span></td></tr>
+        <tr><td>CPM (COP)</td><td>$22,097</td><td>$14,060</td><td><span class="dp">-36%</span></td></tr>
+        <tr><td>CTR Link Click</td><td>4.78%</td><td>4.24%</td><td><span class="dn">-0.54 pp</span></td></tr>
+        <tr><td>Landing Page Views</td><td>687</td><td>2,649</td><td><span class="dp">+285%</span></td></tr>
+        <tr class="gr"><td>Costo por LPV (COP)</td><td>$858</td><td>$906</td><td><span class="dn">+6%</span></td></tr>
+        <tr class="hl"><td>CPR — Costo por Registro (COP)</td><td>$53,597</td><td>$57,125</td><td><span class="dn">+7%</span></td></tr>
+        <tr><td>Inversión total (COP)</td><td>$589,565</td><td>$2,399,239</td><td><span class="dn">+307%</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- ENFERMERÍA -->
+<!-- ══════════════════════════════════════════════════════ -->
+<div class="programa-block">
+  <div class="programa-title-bar">
+    <span class="programa-name">💉 Enfermería</span>
+    <span class="programa-badge">PROGRAMA</span>
+  </div>
+  <div class="kpi-row">
+    <div class="period-col mayo">
+      <div class="period-col-header">
+        <span class="period-col-title">Mayo 2026</span>
+        <span class="dcto-badge-mayo">20% Dcto</span>
+      </div>
+      <div class="adname-tag">estatico_enfermeria_20dcto_30-04</div>
+      <div class="mini-kpis">
+        <div class="mini-kpi main-kpi"><div class="mini-val yellow">62</div><div class="mini-lbl">Registros</div><div class="mini-sub">Conversiones</div></div>
+        <div class="mini-kpi"><div class="mini-val">50.5K</div><div class="mini-lbl">Alcance</div><div class="mini-sub">Personas únicas</div></div>
+        <div class="mini-kpi"><div class="mini-val">2.59%</div><div class="mini-lbl">CTR Link</div><div class="mini-sub">5,530 clicks</div></div>
+        <div class="mini-kpi"><div class="mini-val">$2.4M</div><div class="mini-lbl">Inversión</div><div class="mini-sub">COP</div></div>
+      </div>
+    </div>
+    <div class="period-col junio">
+      <div class="period-col-header">
+        <span class="period-col-title">Junio 2026 (hasta hoy)</span>
+        <span class="dcto-badge-junio">15% Dcto · Activo</span>
+      </div>
+      <div class="adname-tag">estatico_enfermeria_15dcto_01-06</div>
+      <div class="mini-kpis">
+        <div class="mini-kpi main-kpi"><div class="mini-val yellow">6</div><div class="mini-lbl">Registros</div><div class="mini-sub">Conversiones</div></div>
+        <div class="mini-kpi"><div class="mini-val">24.4K</div><div class="mini-lbl">Alcance</div><div class="mini-sub">Personas únicas</div></div>
+        <div class="mini-kpi"><div class="mini-val">1.89%</div><div class="mini-lbl">CTR Link</div><div class="mini-sub">1,217 clicks</div></div>
+        <div class="mini-kpi"><div class="mini-val">$632K</div><div class="mini-lbl">Inversión</div><div class="mini-sub">COP</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Métrica</th><th class="th-mayo">Mayo · 20% Dcto</th><th class="th-junio">Junio · 15% Dcto</th><th class="th-var">Variación</th></tr></thead>
+      <tbody>
+        <tr class="hl"><td>Registros (Conversiones)</td><td>62</td><td>6</td><td><span class="dn">-90%</span></td></tr>
+        <tr><td>Alcance</td><td>50,463</td><td>24,381</td><td><span class="dn">-52%</span></td></tr>
+        <tr><td>Impresiones</td><td>213,672</td><td>64,388</td><td><span class="dn">-70%</span></td></tr>
+        <tr><td>CPM (COP)</td><td>$11,138</td><td>$9,821</td><td><span class="dp">-12%</span></td></tr>
+        <tr><td>CTR Link Click</td><td>2.59%</td><td>1.89%</td><td><span class="dn">-0.70 pp</span></td></tr>
+        <tr><td>Landing Page Views</td><td>2,956</td><td>425</td><td><span class="dn">-86%</span></td></tr>
+        <tr class="gr"><td>Costo por LPV (COP)</td><td>$805</td><td>$1,488</td><td><span class="dn">+85%</span></td></tr>
+        <tr class="hl"><td>CPR — Costo por Registro (COP)</td><td>$38,385</td><td>$105,390</td><td><span class="dn">+175%</span></td></tr>
+        <tr><td>Inversión total (COP)</td><td>$2,379,868</td><td>$632,341</td><td><span class="dp">-73%</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- MÚSICA -->
+<!-- ══════════════════════════════════════════════════════ -->
+<div class="programa-block">
+  <div class="programa-title-bar">
+    <span class="programa-name">🎵 Música</span>
+    <span class="programa-badge">PROGRAMA</span>
+  </div>
+  <div class="kpi-row">
+    <div class="period-col mayo">
+      <div class="period-col-header">
+        <span class="period-col-title">Mayo 2026</span>
+        <span class="dcto-badge-mayo">20% Dcto</span>
+      </div>
+      <div class="adname-tag">estatico_pregrado-musica_20dcto_20-05</div>
+      <div class="mini-kpis">
+        <div class="mini-kpi main-kpi"><div class="mini-val yellow">41</div><div class="mini-lbl">Registros</div><div class="mini-sub">Conversiones</div></div>
+        <div class="mini-kpi"><div class="mini-val">10.4K</div><div class="mini-lbl">Alcance</div><div class="mini-sub">Personas únicas</div></div>
+        <div class="mini-kpi"><div class="mini-val">4.70%</div><div class="mini-lbl">CTR Link</div><div class="mini-sub">1,046 clicks</div></div>
+        <div class="mini-kpi"><div class="mini-val">$520K</div><div class="mini-lbl">Inversión</div><div class="mini-sub">COP</div></div>
+      </div>
+    </div>
+    <div class="period-col junio">
+      <div class="period-col-header">
+        <span class="period-col-title">Junio 2026 (hasta hoy)</span>
+        <span class="dcto-badge-junio">15% Dcto · Activo</span>
+      </div>
+      <div class="adname-tag">estatico_pregrado-musica_15dcto_01-06</div>
+      <div class="mini-kpis">
+        <div class="mini-kpi main-kpi"><div class="mini-val yellow">30</div><div class="mini-lbl">Registros</div><div class="mini-sub">Conversiones</div></div>
+        <div class="mini-kpi"><div class="mini-val">14.8K</div><div class="mini-lbl">Alcance</div><div class="mini-sub">Personas únicas</div></div>
+        <div class="mini-kpi"><div class="mini-val">2.84%</div><div class="mini-lbl">CTR Link</div><div class="mini-sub">855 clicks</div></div>
+        <div class="mini-kpi"><div class="mini-val">$391K</div><div class="mini-lbl">Inversión</div><div class="mini-sub">COP</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Métrica</th><th class="th-mayo">Mayo · 20% Dcto</th><th class="th-junio">Junio · 15% Dcto</th><th class="th-var">Variación</th></tr></thead>
+      <tbody>
+        <tr class="hl"><td>Registros (Conversiones)</td><td>41</td><td>30</td><td><span class="dn">-27%</span></td></tr>
+        <tr><td>Alcance</td><td>10,428</td><td>14,839</td><td><span class="dp">+42%</span></td></tr>
+        <tr><td>Impresiones</td><td>22,238</td><td>30,119</td><td><span class="dp">+35%</span></td></tr>
+        <tr><td>CPM (COP)</td><td>$23,376</td><td>$12,980</td><td><span class="dp">-44%</span></td></tr>
+        <tr><td>CTR Link Click</td><td>4.70%</td><td>2.84%</td><td><span class="dn">-1.86 pp</span></td></tr>
+        <tr><td>Landing Page Views</td><td>428</td><td>400</td><td><span class="dn">-7%</span></td></tr>
+        <tr class="gr"><td>Costo por LPV (COP)</td><td>$1,215</td><td>$977</td><td><span class="dp">-20%</span></td></tr>
+        <tr class="hl"><td>CPR — Costo por Registro (COP)</td><td>$12,679</td><td>$13,032</td><td><span class="dn">+3%</span></td></tr>
+        <tr><td>Inversión total (COP)</td><td>$519,834</td><td>$390,946</td><td><span class="dp">-25%</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- LIC. LENGUAS -->
+<!-- ══════════════════════════════════════════════════════ -->
+<div class="programa-block">
+  <div class="programa-title-bar">
+    <span class="programa-name">🌐 Lic. Lenguas Extranjeras (Ext.)</span>
+    <span class="programa-badge">PROGRAMA</span>
+  </div>
+  <div class="kpi-row">
+    <div class="period-col mayo">
+      <div class="period-col-header">
+        <span class="period-col-title">Mayo 2026</span>
+        <span class="dcto-badge-mayo">20% Dcto</span>
+      </div>
+      <div class="adname-tag">estatico_liclenguasext_20dcto_30-04</div>
+      <div class="mini-kpis">
+        <div class="mini-kpi main-kpi"><div class="mini-val yellow">1</div><div class="mini-lbl">Registros</div><div class="mini-sub">Conversiones</div></div>
+        <div class="mini-kpi"><div class="mini-val">1.2K</div><div class="mini-lbl">Alcance</div><div class="mini-sub">Personas únicas</div></div>
+        <div class="mini-kpi"><div class="mini-val">4.90%</div><div class="mini-lbl">CTR Link</div><div class="mini-sub">95 clicks</div></div>
+        <div class="mini-kpi"><div class="mini-val">$63K</div><div class="mini-lbl">Inversión</div><div class="mini-sub">COP</div></div>
+      </div>
+    </div>
+    <div class="period-col junio">
+      <div class="period-col-header">
+        <span class="period-col-title">Junio 2026 (hasta hoy)</span>
+        <span class="dcto-badge-junio">15% Dcto · Activo</span>
+      </div>
+      <div class="adname-tag">estatico_liclenguasext_15dcto_01-06</div>
+      <div class="mini-kpis">
+        <div class="mini-kpi main-kpi"><div class="mini-val yellow">16</div><div class="mini-lbl">Registros</div><div class="mini-sub">Conversiones</div></div>
+        <div class="mini-kpi"><div class="mini-val">6.5K</div><div class="mini-lbl">Alcance</div><div class="mini-sub">Personas únicas</div></div>
+        <div class="mini-kpi"><div class="mini-val">5.43%</div><div class="mini-lbl">CTR Link</div><div class="mini-sub">801 clicks</div></div>
+        <div class="mini-kpi"><div class="mini-val">$454K</div><div class="mini-lbl">Inversión</div><div class="mini-sub">COP</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Métrica</th><th class="th-mayo">Mayo · 20% Dcto</th><th class="th-junio">Junio · 15% Dcto</th><th class="th-var">Variación</th></tr></thead>
+      <tbody>
+        <tr class="hl"><td>Registros (Conversiones)</td><td>1</td><td>16</td><td><span class="dp">+1,500%</span></td></tr>
+        <tr><td>Alcance</td><td>1,177</td><td>6,467</td><td><span class="dp">+449%</span></td></tr>
+        <tr><td>Impresiones</td><td>1,937</td><td>14,762</td><td><span class="dp">+662%</span></td></tr>
+        <tr><td>CPM (COP)</td><td>$32,584</td><td>$30,784</td><td><span class="dp">-6%</span></td></tr>
+        <tr><td>CTR Link Click</td><td>4.90%</td><td>5.43%</td><td><span class="dp">+0.53 pp</span></td></tr>
+        <tr><td>Landing Page Views</td><td>43</td><td>280</td><td><span class="dp">+551%</span></td></tr>
+        <tr class="gr"><td>Costo por LPV (COP)</td><td>$1,468</td><td>$1,623</td><td><span class="dn">+11%</span></td></tr>
+        <tr class="hl"><td>CPR — Costo por Registro (COP)</td><td>$63,115</td><td>$28,402</td><td><span class="dp">-55%</span></td></tr>
+        <tr><td>Inversión total (COP)</td><td>$63,115</td><td>$454,430</td><td><span class="dn">+620%</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<!-- RESUMEN GENERAL -->
+<!-- ══════════════════════════════════════════════════════ -->
+<div class="section-label" style="margin-top:36px;">Resumen comparativo — todos los programas</div>
+<div class="resumen-card">
+  <div class="resumen-header">
+    <span class="resumen-header-text">Rendimiento consolidado por programa · Anuncio Descuento Estático</span>
+    <span class="resumen-badge">Mayo 20% vs Junio 15%</span>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Programa</th>
+        <th class="th-mayo">Registros Mayo</th>
+        <th class="th-junio">Registros Junio</th>
+        <th class="th-mayo">CPR Mayo (COP)</th>
+        <th class="th-junio">CPR Junio (COP)</th>
+        <th class="th-mayo">Inversión Mayo</th>
+        <th class="th-junio">Inversión Junio</th>
+        <th class="th-var">Δ Registros</th>
+        <th class="th-var">Δ CPR</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Medicina</strong></td>
+        <td>11</td><td>42</td>
+        <td>$53,597</td><td>$57,125</td>
+        <td>$589,565</td><td>$2,399,239</td>
+        <td><span class="dp">+282%</span></td>
+        <td><span class="dn">+7%</span></td>
+      </tr>
+      <tr class="gr">
+        <td><strong>Enfermería</strong></td>
+        <td>62</td><td>6</td>
+        <td>$38,385</td><td>$105,390</td>
+        <td>$2,379,868</td><td>$632,341</td>
+        <td><span class="dn">-90%</span></td>
+        <td><span class="dn">+175%</span></td>
+      </tr>
+      <tr>
+        <td><strong>Música</strong></td>
+        <td>41</td><td>30</td>
+        <td>$12,679</td><td>$13,032</td>
+        <td>$519,834</td><td>$390,946</td>
+        <td><span class="dn">-27%</span></td>
+        <td><span class="dn">+3%</span></td>
+      </tr>
+      <tr class="hl">
+        <td><strong>Lic. Lenguas</strong></td>
+        <td>1</td><td>16</td>
+        <td>$63,115</td><td>$28,402</td>
+        <td>$63,115</td><td>$454,430</td>
+        <td><span class="dp">+1,500%</span></td>
+        <td><span class="dp">-55%</span></td>
+      </tr>
+      <tr style="background:#1A1A1A">
+        <td style="color:#FFC000;font-weight:700">TOTAL</td>
+        <td style="color:#fff;font-weight:700">115</td>
+        <td style="color:#FFC000;font-weight:700">94</td>
+        <td style="color:#fff;font-weight:700">$38,063 prom.</td>
+        <td style="color:#FFC000;font-weight:700">$50,987 prom.</td>
+        <td style="color:#fff;font-weight:700">$3,552,382</td>
+        <td style="color:#FFC000;font-weight:700">$3,876,956</td>
+        <td style="color:#EF5350;font-weight:700">-18%</td>
+        <td style="color:#EF5350;font-weight:700">+34%</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- INSIGHT BAR -->
+<div class="insight-bar">
+  <div class="insight-accent"></div>
+  <div class="insight-text">
+    <strong>Insights clave:</strong>
+    <strong>Enfermería</strong> fue el programa más eficiente en mayo (62 registros, CPR $38K) pero cayó drásticamente en junio (-90% registros, CPR se disparó a $105K) — requiere revisión urgente del presupuesto y creatividad.
+    <strong>Lic. Lenguas</strong> es el gran ganador del cambio: mejoró 16x en registros y redujo su CPR a la mitad (-55%), respondiendo muy bien al nuevo anuncio con más inversión.
+    <strong>Música</strong> mantiene estabilidad y el CPR más eficiente de todos los programas (~$12-13K), independiente del porcentaje de descuento.
+    <strong>Medicina</strong> escala volumétricamente con más presupuesto pero la eficiencia por peso invertido se mantiene similar.
+    En total, junio (18 días) está en camino de superar a mayo en inversión pero con menos registros totales — el CPR promedio subió 34%.
+  </div>
+</div>
+
+<div class="footer">ADCOM · Reporte generado Jun 18, 2026 · Corpas — Descuento 4 Programas</div>
+
+</body>
+</html>
